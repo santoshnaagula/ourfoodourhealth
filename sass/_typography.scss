@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "NoirPro-Bold";
+  src: url("../fonts/NoirPro-Bold.otf");
+}
+
+@font-face {
+  font-family: "NoirPro";
+  src: url("../fonts/NoirPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "NoirPro-Light";
+  src: url("../fonts/NoirPro-Light.otf");
+}
+
+$font-Regular: "NoirPro";
+$font-Bold: "NoirPro-Bold";
+$font-Light: "NoirPro-Light";

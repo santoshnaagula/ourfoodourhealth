@@ -1,0 +1,88 @@
+// transform mixin
+@mixin transform($trans-property) {
+  -webkit-transform: $trans-property;
+  -ms-transform: $trans-property;
+  transform: $trans-property;
+}
+
+@mixin transformX($trans-Xproperty) {
+  -webkit-transform: $trans-Xproperty;
+  -ms-transform: $trans-Xproperty;
+  transform: $trans-Xproperty;
+}
+@mixin transformY($trans-Yproperty) {
+  -webkit-transform: $trans-Yproperty;
+  -ms-transform: $trans-Yproperty;
+  transform: $trans-Yproperty;
+}
+
+@mixin transform-origin($trans-org-property) {
+  -webkit-transform-origin: $trans-org-property;
+  -ms-transform-origin: $trans-org-property;
+  transform-origin: $trans-org-property;
+}
+
+@mixin transition($transit-property) {
+  -webkit-transition: $transit-property; /* For Safari 3.1 to 6.0 */
+  transition: $transit-property;
+}
+
+@mixin animation-delay($animdelay-property) {
+  -webkit-animation-delay: $animdelay-property; /* For Safari 3.1 to 6.0 */
+  animation-delay: $animdelay-property;
+}
+
+@mixin transition-delay($transdelay-property) {
+  -webkit-transition-delay: $transdelay-property; /* For Safari 3.1 to 6.0 */
+  transition-delay: $transdelay-property;
+}
+
+@mixin filter($filter-property) {
+  -webkit-filter: $filter-property; /* For Safari 3.1 to 6.0 */
+  filter: $filter-property;
+}
+
+// Animation mixin
+@mixin animation($anim-property) {
+  -webkit-animation: $anim-property; /* Safari 4+ */
+  -moz-animation: $anim-property; /* Fx 5+ */
+  -o-animation: $anim-property; /* Opera 12+ */
+  animation: $anim-property; /* IE 10+, Fx 29+ */
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//Gradient colors mixin
+@mixin linear-gradient($from, $to) {
+  background: $to;
+  background: -moz-linear-gradient(left, $from 0%, $to 80%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop(80%, $to));
+  background: -webkit-linear-gradient(left, $from 0%, $to 80%);
+  background: -o-linear-gradient(left, $from 0%, $to 80%);
+  background: linear-gradient(140deg, $from 0%, $to 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to});
+}
+
+@mixin linear-gradient-t($from, $to) {
+  background: $to;
+  background: -moz-linear-gradient($from 0%, $to 80%);
+  background: -webkit-gradient(linear, color-stop(0%, $from), color-stop(80%, $to));
+  background: -webkit-linear-gradient($from 0%, $to 80%);
+  background: -o-linear-gradient($from 0%, $to 80%);
+  background: linear-gradient($from 0%, $to 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to});
+}
