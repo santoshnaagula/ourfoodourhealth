@@ -7,12 +7,45 @@
   <title>OUR FOOD OUR HEALTH</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/slick.css">
-  <!-- <link rel="stylesheet" href="css/aos.css"> -->
+  <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <div id="header"></div>
+  <div class="header container-fluid" data-aos="fade-down">
+    <div class="row align-items-center">
+      <div class="logo col">
+        <img src="../img/logo-color.png" alt="">
+      </div>
+      <div class="header-menu-section col pe-0">
+        <div class="header-top" data-aos="fade-down">
+          <div class="header-icon">
+            <a href="#"><i class="bi bi-telephone"></i> Call Anytime: +92 (8800) 9806</a>
+          </div>
+          <div class="header-icon">
+            <a href="#"><i class="bi bi-envelope"></i> info@example.com</a>
+          </div>
+          <div class="header-social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+        <div class="header-bottom" data-aos="fade-down" data-aos-delay="300">
+          <ul class="custom-navbar">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Our Products</a></li>
+            <li><a href="#">Our services</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="banner-part" data-aos="fade-up" data-aos-delay="300">
     <div class="banner-text" id="t">
       The Powerful Healing Benefits of <br>
@@ -241,30 +274,64 @@
     </section>
   </div>
 
-  <div id="footer" data-aos="fade-up" data-aos-delay="300"></div>
+  <div class="footer-part">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-logo">
+          <img src="../img/logo-white.png" alt="">
+        </div>
+        <div class="footer-about">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore<br>
+          magna aliqua. Quis ipsum
+        </div>
+        <div class="footer-contact">
+          1120 Lorem ipsum dolor sit amet, KC 179050, Chandigarh.<br>
+          +01 2345 6789 12|+01 2345 6789 12
+        </div>
+
+        <div class="footer-social-icons">
+          <a href="#">Home</a>
+          <a href="#">About us</a>
+          <a href="#"> Our Products</a>
+          <a href="#">Our services</a>
+          <a href="#">Contact us</a>
+        </div>
+        <div class="footer-social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-dribbble"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2023 Our food Our health All Rights Reserved.
+    </div>
+  </div>
+
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/t-js_t.min.js"></script>
-  <!-- <script src="js/aos.js"></script> -->
+  <script src="js/aos.js"></script>
   <script>
     $(function () {
-      $("#header").load("includes/header.html");
-      $("#footer").load("includes/footer.html");
       $('#t').t({
         delay: true
       });
       $('.featured-slider').slick({
         slidesToShow: 4,
       });
-      // AOS.init({
-      //   offset: 20,
-      //   delay: 0,
-      //   duration: 1500,
-      //   easing: 'ease',
-      //   once: true,
-      // });
+      AOS.init({
+        offset: 20,
+        delay: 0,
+        duration: 1500,
+        easing: 'ease',
+        once: true,
+      });
     });
   </script>
 </body>
