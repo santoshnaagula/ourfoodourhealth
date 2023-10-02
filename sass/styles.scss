@@ -8,11 +8,11 @@ html,
   width: 100%;
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
 
 body {
   font-family: $font-Light;
-  overflow-x: hidden;
 }
 
 body {
@@ -46,6 +46,10 @@ a,
 }
 
 .header {
+  @include xs() {
+    padding-top: 30px;
+    position: relative;
+  }
   .logo {
     padding: 15px;
     flex: 0 0 auto;
@@ -53,6 +57,13 @@ a,
     text-align: center;
     img {
       width: 180px;
+    }
+    @include xs() {
+      width: 170px;
+      padding: 0px;
+      img {
+        width: 100%;
+      }
     }
   }
   .header-menu-section {
@@ -62,8 +73,24 @@ a,
       color: $light;
       display: flex;
       font-size: 14px;
+      @include xs() {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 4px 10px !important;
+      }
+      .rc {
+        display: inherit;
+        @include xs() {
+          display: none;
+        }
+      }
       .header-icon {
         margin-right: 30px;
+        @include xs() {
+          margin-right: 15px !important;
+        }
         a {
           color: $light;
           &:hover {
@@ -87,11 +114,77 @@ a,
     }
     .header-bottom {
       background-color: rgb(33 150 243 / 10%);
+      position: relative;
+      @include xs() {
+        position: absolute;
+        top: 93px;
+        left: 0px;
+        width: 100%;
+        z-index: 9;
+        background: rgb(255 255 255 / 89%);
+      }
+      .btn-menu {
+        display: none;
+        position: absolute;
+        top: -50px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+        border-radius: 0px;
+        @include xs() {
+          display: inherit;
+        }
+        .menu-icon {
+          display: inline-block;
+          position: relative;
+          width: 30px;
+          height: 2px;
+          background-color: $primary;
+          &::before,
+          &::after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background-color: $primary;
+            position: absolute;
+            left: 0;
+          }
+          &::after {
+            top: 10px;
+            @include transition(0.3s ease all);
+          }
+          &::before {
+            top: -10px;
+            @include transition(0.3s ease all);
+          }
+        }
+        &.open {
+          .menu-icon {
+            background-color: transparent;
+            &::after,
+            &::before {
+              top: 0px;
+            }
+            &::after {
+              @include transition(0.3s ease all);
+              @include transform(rotate(45deg));
+            }
+            &::before {
+              @include transition(0.3s ease all);
+              @include transform(rotate(135deg));
+            }
+          }
+        }
+      }
       .custom-navbar {
         display: flex;
         list-style: none;
         padding: 0px;
         margin: 0px;
+        @include xs() {
+          display: none;
+        }
         li {
           a {
             color: $dark;
@@ -120,6 +213,10 @@ a,
               z-index: -1;
               @include transition(0.3s ease all);
             }
+            @include xs() {
+              width: 100%;
+              padding: 15px;
+            }
           }
           &.active {
             a {
@@ -134,11 +231,32 @@ a,
       }
     }
   }
+  .ofoh {
+    position: absolute;
+    bottom: 19px;
+    right: 15px;
+    color: $light;
+    z-index: -1;
+    padding: 6px 15px;
+    border-radius: 40px;
+    font-size: 14px;
+    @include linear-gradient($primary, $secondary);
+    @include xs() {
+      display: none;
+    }
+  }
 }
 
 .banner-part {
   position: relative;
   z-index: 0;
+  &.inner {
+    .banner-text {
+      font-size: 40px;
+      height: 100px;
+      width: auto;
+    }
+  }
   .banner-text {
     position: absolute;
     top: calc(70% - 75px);
@@ -151,6 +269,14 @@ a,
     padding-top: 22px;
     padding-left: 40px;
     z-index: 0;
+    @include xs() {
+      font-size: 14px;
+      left: 0px;
+      bottom: 0px;
+      top: inherit;
+      height: 50px;
+      padding: 5px 10px;
+    }
     &::after {
       content: "";
       height: 100%;
@@ -185,6 +311,10 @@ a,
   position: relative;
   line-height: 80px;
   @include transition(0.3s ease all);
+  @include xs() {
+    line-height: 40px;
+    font-size: 20px;
+  }
   span {
     font-family: $font-Bold;
   }
@@ -205,10 +335,17 @@ a,
 .section-para {
   text-align: center;
   margin-top: 30px;
+  @include xs() {
+    font-size: 14px;
+    margin-top: 15px;
+  }
 }
 
 .healthy-water {
   padding: 70px 0px;
+  @include xs() {
+    padding: 30px 0px;
+  }
   &:hover {
     .section-heading {
       color: $secondary;
@@ -252,6 +389,9 @@ a,
   z-index: 0;
   @include transition(0.3s ease all);
   @include transform(translate(0px, 0px));
+  @include xs() {
+    margin-top: 15px;
+  }
   .card-icon {
     width: 80px;
     height: 80px;
@@ -311,6 +451,9 @@ a,
   background-position: left center;
   background-size: cover;
   background-attachment: fixed;
+  @include xs() {
+    padding: 30px 0px;
+  }
   &:hover {
     .section-heading {
       color: $secondary;
@@ -346,6 +489,9 @@ a,
     display: flex;
     align-items: end;
     padding: 15px;
+    @include xs() {
+      font-size: 18px;
+    }
   }
   .feature-card-details {
     position: absolute;
@@ -357,7 +503,7 @@ a,
     background-color: $secondary;
     z-index: 1;
     overflow: hidden;
-    padding: 20px;
+    padding: 180px 20px 20px;
     @include transition(0.3s ease all);
     .feature-card-img {
       width: 200px;
@@ -365,7 +511,7 @@ a,
       padding: 80px 40px 40px 80px;
       background-color: $primary;
       border-radius: 50%;
-      position: relative;
+      position: absolute;
       left: -50px;
       top: -50px;
       img {
@@ -374,9 +520,15 @@ a,
     }
     .card-heading {
       font-family: $font-Bold;
+      @include xs() {
+        font-size: 16px;
+      }
     }
     .card-para {
       font-size: 14px;
+      @include xs() {
+        font-size: 13px;
+      }
     }
     .btn-feature {
       border: none;
@@ -424,7 +576,7 @@ a,
     position: absolute;
     top: 0px;
     left: 2px;
-    font-size: 26px;
+    font-size: 20px;
     background-color: $primary;
   }
   &:hover {
@@ -438,26 +590,38 @@ a,
     &::after {
       content: "\f138";
       @include transform(rotate(180deg));
+      top: -6px;
     }
   }
   &.slick-next {
     right: 0px;
     &::after {
       content: "\f138";
+      top: 5px;
     }
   }
 }
 
-.testimonials-part {
-  height: 550px;
-}
-
-.home-testimonial {
-  background-color: $secondary;
-  height: 380px;
-  margin-bottom: 50px;
+.testimonial-section {
+  padding: 70px 0px;
+  position: relative;
+  @include xs() {
+    padding: 30px 0px;
+  }
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    background-color: $secondary;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+  }
   .section-heading {
     color: $light;
+    font-family: $font-Bold;
     &::after {
       background-color: $light;
     }
@@ -465,52 +629,23 @@ a,
   .section-para {
     color: $light;
   }
-}
-.home-testimonial-bottom {
-  background-color: #f8f8f8;
-  transition:
-    background 0.3s,
-    border 0.3s,
-    border-radius 0.3s,
-    box-shadow 0.3s;
-  margin-top: 20px;
-  margin-bottom: 0px;
-  position: relative;
-  height: 130px;
-  top: 190px;
-}
-.testimonial-inner {
-  position: relative;
-  top: -174px;
-}
-.testimonial-pos {
-  position: relative;
-  top: 24px;
-}
-.testimonial-inner .tour-desc {
-  border-radius: 5px;
-  padding: 40px;
-}
-.color-grey-3 {
-  font-size: 14px;
-  color: #6c83a2;
-}
-.testimonial-inner img.tm-people {
-  width: 60px;
-  height: 60px;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  max-width: none;
-}
-.link-name {
-  font-size: 14px;
-  color: #6c83a2;
-}
-.link-position {
-  font-size: 12px;
-  color: #6c83a2;
+  .testi-slider {
+    .testi-card {
+      background-color: $light;
+      padding: 30px;
+      border-radius: 6px;
+      margin: 25px 15px;
+      .tm-people {
+        width: 60px;
+        height: 60px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        max-width: none;
+      }
+    }
+  }
 }
 
 .footer-part {
@@ -523,6 +658,9 @@ a,
       img {
         width: 200px;
         margin-bottom: 30px;
+        @include xs() {
+          width: 150px;
+        }
       }
     }
     .footer-about {
@@ -531,18 +669,31 @@ a,
       margin-bottom: 30px;
       padding-bottom: 30px;
       border-bottom: 1px solid $light-grey;
+      @include xs() {
+        font-size: 14px;
+      }
     }
     .footer-contact {
       text-align: center;
       opacity: 0.6;
+      @include xs() {
+        font-size: 14px;
+      }
     }
     .footer-social-icons {
       display: flex;
       justify-content: center;
+      @include xs() {
+        flex-wrap: wrap;
+      }
       a {
         color: $light;
-        padding: 25px 15px;
+        padding: 15px;
         opacity: 0.6;
+        @include xs() {
+          font-size: 12px;
+          padding: 15px;
+        }
         &:hover {
           opacity: 1;
         }
@@ -554,5 +705,164 @@ a,
     padding: 25px;
     text-align: center;
     opacity: 0.6;
+    @include xs() {
+      font-size: 12px;
+    }
+  }
+}
+
+.inner-banner-part {
+  padding: 100px 0px;
+  text-align: center;
+  position: relative;
+  background: url(../img/bg1.jpg) no-repeat center;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  background-attachment: fixed;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+    opacity: 0.7;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+  }
+  .banner-text {
+    font-size: 36px;
+    font-family: $font-Bold;
+    color: $light;
+    border-bottom: 2px solid $light;
+  }
+}
+
+.inner-body {
+  padding: 70px 0px;
+  .col {
+    @include xs() {
+      width: 100%;
+      flex: auto;
+    }
+  }
+  h1 {
+    font-size: 40px;
+    font-family: $font-Bold;
+    color: $primary;
+    border-bottom: 2px solid $secondary;
+    line-height: 50px;
+    margin-bottom: 30px;
+    @include xs() {
+      font-size: 30px;
+    }
+  }
+  h3 {
+    font-family: $font-Bold;
+    color: $secondary;
+  }
+  p {
+    text-align: justify;
+    strong {
+      font-family: $font-Bold;
+    }
+  }
+  .inner-about-img {
+    width: 320px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 15px 15px $primary;
+    img {
+      width: 100%;
+    }
+  }
+  &.inner-product {
+    .inner-about-img {
+      width: 80%;
+    }
+  }
+  &.products {
+    .btn-products {
+      @include xs() {
+        margin-bottom: 15px;
+      }
+    }
+    .inner-about-img {
+      @include xs() {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &.contact-us {
+    h1 {
+      border: none;
+      font-size: 60px;
+    }
+    .inner-about-img {
+      width: 100%;
+    }
+    .btn-email {
+      border: 1px solid $primary;
+      color: $primary;
+      border-radius: 50px;
+      padding: 15px 45px;
+      &:hover {
+        border: 1px solid $secondary;
+        background-color: $secondary;
+        color: $light;
+      }
+    }
+  }
+  &.reverse {
+    background: url(../img/section-bg.png) no-repeat;
+    background-position: left center;
+    background-attachment: fixed;
+    background-color: $bg-body;
+  }
+}
+
+.btn-products {
+  padding: 10px 40px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  background-color: $primary;
+  font-family: $font-Bold;
+  color: $light;
+  @include transform(translate(0px, 0px));
+  &:hover {
+    @include transform(translate(3px, 3px));
+    background-color: $secondary;
+    box-shadow: -5px 5px $primary;
+    color: $light;
+  }
+}
+
+.inner-feature-products {
+  .card {
+    border: none;
+    box-shadow: $box-shadow-sm;
+    height: 100%;
+    .card-title {
+      font-family: $font-Bold;
+      color: $primary;
+    }
+    .card-text {
+      text-align: justify;
+    }
+  }
+}
+
+.inner-feature-products {
+  .col {
+    @include xs() {
+      width: 100%;
+      flex: auto;
+    }
+  }
+  .card {
+    @include xs() {
+      margin-bottom: 15px;
+    }
   }
 }

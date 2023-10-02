@@ -4,26 +4,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/img/fevicon.png">
   <title>OUR FOOD OUR HEALTH</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <div class="header container-fluid" data-aos="fade-down">
+  <div class="header container-fluid">
     <div class="row align-items-center">
       <div class="logo col">
-        <img src="../img/logo-color.png" alt="">
+        <a href="/">
+          <img src="../img/logo-color.png" alt=""></a>
       </div>
       <div class="header-menu-section col pe-0">
-        <div class="header-top" data-aos="fade-down">
+        <div class="header-top">
           <div class="header-icon">
-            <a href="#"><i class="bi bi-telephone"></i> Call Anytime: +92 (8800) 9806</a>
+            <a href="#"><i class="bi bi-telephone"></i> <span class="rc"> Call Anytime: 720-317-9674</span></a>
           </div>
           <div class="header-icon">
-            <a href="#"><i class="bi bi-envelope"></i> info@example.com</a>
+            <a href="#"><i class="bi bi-envelope"></i> <span class="rc">bemer.surya@gmail.com</span></a>
           </div>
           <div class="header-social-icons">
             <a href="#"><i class="bi bi-facebook"></i></a>
@@ -33,27 +34,30 @@
             <a href="#"><i class="bi bi-dribbble"></i></a>
           </div>
         </div>
-        <div class="header-bottom" data-aos="fade-down" data-aos-delay="300">
-          <ul class="custom-navbar">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Our Products</a></li>
-            <li><a href="#">Our services</a></li>
-            <li><a href="#">Contact us</a></li>
+        <div class="header-bottom">
+          <button class="btn btn-menu" id="menuClick">
+            <span class="menu-icon"></span>
+          </button>
+          <ul class="custom-navbar" id="menuToggle">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
+          <div class="ofoh">Discovering the Power of Food for Better Health</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="banner-part" data-aos="fade-up" data-aos-delay="300">
+  <div class="banner-part">
     <div class="banner-text" id="t">
       The Powerful Healing Benefits of <br>
       Antioxidant rich, Alkalized Water...
     </div>
     <img src="img/banner.jpg" alt="">
   </div>
-  <div class="healthy-water" data-aos="fade-up" data-aos-delay="300">
+  <div class="healthy-water">
     <div class="container">
       <h1 class="section-heading"><span>Healthy</span> Water</h1>
       <p class="section-para">Healthy water is safe for consumption, free from pathogens, and devoid of unusual odors o
@@ -113,13 +117,13 @@
           </div>
         </div>
       </div>
-      <div class="section-footer">
+      <!-- <div class="section-footer">
         <button class="btn btn-section">See More</button>
-      </div>
+      </div> -->
     </div>
   </div>
 
-  <div class="feature-products" data-aos="fade-up" data-aos-delay="300">
+  <div class="feature-products">
     <div class="container">
       <h1 class="section-heading"><span>Featured </span> products</h1>
       <p class="section-para">Healthy water is safe for consumption, free from pathogens, and devoid of unusual odors o
@@ -136,10 +140,9 @@
               <img src="img/f1.png" alt="">
             </div>
             <h4 class="card-heading">LEVELUK K8</h4>
-            <p class="card-para">Proper hydration supports the immune system's function, helping the body fight off
-              illnesses.
-            </p>
-            <button class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></button>
+            <p class="card-para">The K8 (Kangen 8) is now Enagic's most powerful antioxidant machine - featuring 8
+              platinum-dipped titanium plates! </p>
+            <a href="leveluk-k8.html" class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
 
@@ -154,10 +157,10 @@
               <img src="img/f1.png" alt="">
             </div>
             <h4 class="card-heading">LEVELUK JRIV</h4>
-            <p class="card-para">Proper hydration supports the immune system's function, helping the body fight off
-              illnesses.
+            <p class="card-para">The JrIV has four solid electrode plates, which reduces the energy consumption. Due to
+              the lower power consumption and fewer plates
             </p>
-            <button class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></button>
+            <a href="leveluk-jriv.html" class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
 
@@ -171,10 +174,10 @@
               <img src="img/f1.png" alt="">
             </div>
             <h4 class="card-heading">LEVELUK SD501</h4>
-            <p class="card-para">Proper hydration supports the immune system's function, helping the body fight off
-              illnesses.
+            <p class="card-para">The SD501 is the finest machine in its class, with the highest quality built-in
+              electrolysis chamber on the market
             </p>
-            <button class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></button>
+            <a href="leveluk-sd501.html" class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
 
@@ -188,90 +191,97 @@
               <img src="img/f1.png" alt="">
             </div>
             <h4 class="card-heading">LEVELUK SD501 Platinum</h4>
-            <p class="card-para">Proper hydration supports the immune system's function, helping the body fight off
-              illnesses.
+            <p class="card-para">The SD501 is the finest machine in its class, with the highest quality built-in
+              electrolysis chamber on the market
             </p>
-            <button class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></button>
+            <a href="leveluk-sd501-platinum.html" class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
 
         <div class="feature-card">
           <div class="feature-img">
-            <img src="img/f4.jpg" alt="">
+            <img src="img/f5.jpg" alt="">
           </div>
-          <div class="feature-heading">LEVELUK SD501 Platinum</div>
+          <div class="feature-heading">Super LEVELUK 501</div>
           <div class="feature-card-details">
             <div class="feature-card-img">
               <img src="img/f1.png" alt="">
             </div>
-            <h4 class="card-heading">LEVELUK SD501 Platinum</h4>
-            <p class="card-para">Proper hydration supports the immune system's function, helping the body fight off
-              illnesses.
+            <h4 class="card-heading">Super LEVELUK 501</h4>
+            <p class="card-para">This highly productive machine has 7 and 5 electrode plates, a twin hose system,
+              industry leading cleaning system
             </p>
-            <button class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></button>
+            <a href="leveluk-sd501-platinum.html" class="btn btn-feature">Read me <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="section-footer">
-        <button class="btn btn-section">See More</button>
+        <a href="/products.html" class="btn btn-section">See More</a>
       </div>
     </div>
   </div>
 
-  <div class="testimonials-part" data-aos="fade-up" data-aos-delay="300">
-    <section class="home-testimonial">
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center testimonial-pos">
-          <h1 class="section-heading">Testimonials</h1>
-          <p class="section-para">Explore the clients experience</p>
+  <div class="testimonial-section">
+    <div class="container">
+      <h1 class="section-heading"><i class="bi bi-quote"></i>Testimonials</h1>
+      <p class="section-para">Explore the clients experience.</p>
+      <div class="testi-slider">
+        <div class="testi-card shadow">
+          <div class="  text-center">&ldquo;At this School, our mission is to balance a
+            rigorous comprehensive college preparatory curriculum with healthy social and emotional
+            development.&rdquo;</div>
+          <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="img/t1.jpg" alt="">
+          </div>
+          <div class="  d-flex justify-content-center">Balbir Kaur</div>
+          <div class="  d-flex justify-content-center">Student</div>
         </div>
-        <section class="home-testimonial-bottom">
-          <div class="container testimonial-inner">
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-4 style-3">
-                <div class="tour-item ">
-                  <div class="tour-desc bg-white">
-                    <div class="tour-text color-grey-3 text-center">&ldquo;At this School, our mission is to balance a
-                      rigorous comprehensive college preparatory curriculum with healthy social and emotional
-                      development.&rdquo;</div>
-                    <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people"
-                        src="https://images.pexels.com/photos/6625914/pexels-photo-6625914.jpeg" alt=""></div>
-                    <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
-                    <div class="link-position d-flex justify-content-center">Student</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 style-3">
-                <div class="tour-item ">
-                  <div class="tour-desc bg-white">
-                    <div class="tour-text color-grey-3 text-center">&ldquo;At this School, our mission is to balance a
-                      rigorous comprehensive college preparatory curriculum with healthy social and emotional
-                      development.&rdquo;</div>
-                    <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people"
-                        src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt=""></div>
-                    <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
-                    <div class="link-position d-flex justify-content-center">Student</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 style-3">
-                <div class="tour-item ">
-                  <div class="tour-desc bg-white">
-                    <div class="tour-text color-grey-3 text-center">&ldquo;At this School, our mission is to balance a
-                      rigorous comprehensive college preparatory curriculum with healthy social and emotional
-                      development.&rdquo;</div>
-                    <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people"
-                        src="https://images.pexels.com/photos/4946604/pexels-photo-4946604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt=""></div>
-                    <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
-                    <div class="link-position d-flex justify-content-center">Student</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </section>
-    </section>
+        <div class="testi-card shadow">
+          <div class="  text-center">&ldquo;At this School, our mission is to balance a
+            rigorous comprehensive college preparatory curriculum with healthy social and emotional
+            development.&rdquo;</div>
+          <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="img/t1.jpg" alt="">
+          </div>
+          <div class="  d-flex justify-content-center">Balbir Kaur</div>
+          <div class="  d-flex justify-content-center">Student</div>
+        </div>
+        <div class="testi-card shadow">
+          <div class="  text-center">&ldquo;At this School, our mission is to balance a
+            rigorous comprehensive college preparatory curriculum with healthy social and emotional
+            development.&rdquo;</div>
+          <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="img/t1.jpg" alt="">
+          </div>
+          <div class="  d-flex justify-content-center">Balbir Kaur</div>
+          <div class="  d-flex justify-content-center">Student</div>
+        </div>
+        <div class="testi-card shadow">
+          <div class="  text-center">&ldquo;At this School, our mission is to balance a
+            rigorous comprehensive college preparatory curriculum with healthy social and emotional
+            development.&rdquo;</div>
+          <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="img/t1.jpg" alt="">
+          </div>
+          <div class="  d-flex justify-content-center">Balbir Kaur</div>
+          <div class="  d-flex justify-content-center">Student</div>
+        </div>
+        <div class="testi-card shadow">
+          <div class="  text-center">&ldquo;At this School, our mission is to balance a
+            rigorous comprehensive college preparatory curriculum with healthy social and emotional
+            development.&rdquo;</div>
+          <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="img/t1.jpg" alt="">
+          </div>
+          <div class="  d-flex justify-content-center">Balbir Kaur</div>
+          <div class="  d-flex justify-content-center">Student</div>
+        </div>
+        <div class="testi-card shadow">
+          <div class="  text-center">&ldquo;At this School, our mission is to balance a
+            rigorous comprehensive college preparatory curriculum with healthy social and emotional
+            development.&rdquo;</div>
+          <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="img/t1.jpg" alt="">
+          </div>
+          <div class="  d-flex justify-content-center">Balbir Kaur</div>
+          <div class="  d-flex justify-content-center">Student</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="footer-part">
@@ -291,11 +301,10 @@
         </div>
 
         <div class="footer-social-icons">
-          <a href="#">Home</a>
-          <a href="#">About us</a>
-          <a href="#"> Our Products</a>
-          <a href="#">Our services</a>
-          <a href="#">Contact us</a>
+          <a href="/">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/products.html"> Products</a>
+          <a href="/contact.html">Contact</a>
         </div>
         <div class="footer-social-icons">
           <a href="#"><i class="bi bi-facebook"></i></a>
@@ -316,24 +325,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/t-js_t.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script>
-    $(function () {
-      $('#t').t({
-        delay: true
-      });
-      $('.featured-slider').slick({
-        slidesToShow: 4,
-      });
-      AOS.init({
-        offset: 20,
-        delay: 0,
-        duration: 1500,
-        easing: 'ease',
-        once: true,
-      });
-    });
-  </script>
+  <script src="js/custom.js"></script>
 </body>
 
 </html>
