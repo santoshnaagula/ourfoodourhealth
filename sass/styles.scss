@@ -262,11 +262,12 @@ a,
     top: calc(70% - 75px);
     left: calc(30% - 350px);
     display: block;
-    height: 150px;
+    height: auto;
     color: $light;
     font-size: 36px;
     width: 700px;
     padding-top: 22px;
+    padding-bottom: 22px;
     padding-left: 40px;
     z-index: 0;
     @include xs() {
@@ -291,6 +292,24 @@ a,
   }
   img {
     width: 100%;
+  }
+  .btn-learnmore {
+    padding: 10px 40px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    background-color: $secondary;
+    font-family: $font-Bold;
+    color: $light;
+    @include transform(translate(0px, 0px));
+    &:hover {
+      @include transform(translate(3px, 3px));
+      background-color: $secondary;
+      box-shadow: -5px 5px $primary;
+      color: $light;
+    }
+  }
+  #t {
+    height: 108px;
   }
 }
 
@@ -362,7 +381,6 @@ a,
 .section-footer {
   text-align: center;
   padding-top: 40px;
-  .btn-section,
   .btn-section {
     padding: 10px 40px;
     border-radius: 6px;
@@ -532,7 +550,6 @@ a,
     }
     .btn-feature {
       border: none;
-      padding: 0px;
       color: $light;
       font-size: 14px;
       background-color: $primary;
@@ -777,12 +794,25 @@ a,
       width: 100%;
     }
   }
+  .inner-health-img {
+    max-width: 800px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 15px 15px $primary;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+    }
+  }
   &.inner-product {
     .inner-about-img {
       width: 80%;
     }
   }
   &.products {
+    .inner-about-img {
+      width: 360px;
+    }
     .btn-products {
       @include xs() {
         margin-bottom: 15px;
