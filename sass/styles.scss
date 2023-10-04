@@ -298,7 +298,6 @@ a,
       left: 0px;
       bottom: 0px;
       top: inherit;
-      height: 50px;
       padding: 5px 10px;
     }
     h1 {
@@ -307,6 +306,10 @@ a,
       line-height: 100px;
       position: relative;
       z-index: 0;
+      @include xs() {
+        font-size: 20px;
+        line-height: 30px;
+      }
       &::after,
       &::before {
         content: "";
@@ -315,23 +318,44 @@ a,
         height: 70%;
         border: 3px solid $light;
         @include animation(slide 2s);
+        @include xs() {
+          border: 1px solid $light;
+        }
       }
       &::before {
         left: -30px;
         top: 0px;
         border-right: none;
         border-bottom: none;
+        @include xs() {
+          left: 0px;
+        }
       }
       &::after {
         right: -30px;
         bottom: 0px;
         border-left: none;
         border-top: none;
+        @include xs() {
+          right: 0px;
+        }
       }
     }
   }
   img {
     width: 100%;
+  }
+  .home-banner {
+    display: block;
+    @include xs() {
+      display: none;
+    }
+  }
+  .home-banner-m {
+    display: none;
+    @include xs() {
+      display: block;
+    }
   }
   .btn-learnmore {
     padding: 10px 40px;
@@ -347,10 +371,17 @@ a,
       box-shadow: -5px 5px $light;
       color: $light;
     }
+    @include xs() {
+      font-size: 12px;
+      padding: 5px 20px;
+    }
   }
   #t {
     font-size: 22px;
     margin-bottom: 20px;
+    @include xs() {
+      font-size: 12px;
+    }
   }
 }
 
@@ -750,6 +781,9 @@ a,
     .footer-contact {
       text-align: center;
       opacity: 0.6;
+      a {
+        color: $light;
+      }
       @include xs() {
         font-size: 14px;
       }
@@ -885,9 +919,21 @@ a,
     h1 {
       border: none;
       font-size: 60px;
+      a {
+        color: $primary;
+        &:hover {
+          color: $secondary;
+        }
+      }
+      @include xs() {
+        font-size: 36px;
+      }
     }
     .inner-about-img {
       width: 100%;
+      @include xs() {
+        margin-top: 30px;
+      }
     }
     .btn-email {
       border: 1px solid $primary;

@@ -366,7 +366,6 @@ a:focus,
     left: 0px;
     bottom: 0px;
     top: inherit;
-    height: 50px;
     padding: 5px 10px;
   }
 }
@@ -376,6 +375,12 @@ a:focus,
   line-height: 100px;
   position: relative;
   z-index: 0;
+}
+@media screen and (max-width: 599px) {
+  .banner-part .banner-text h1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 .banner-part .banner-text h1::after, .banner-part .banner-text h1::before {
   content: "";
@@ -388,11 +393,21 @@ a:focus,
   -o-animation: slide 2s; /* Opera 12+ */
   animation: slide 2s; /* IE 10+, Fx 29+ */
 }
+@media screen and (max-width: 599px) {
+  .banner-part .banner-text h1::after, .banner-part .banner-text h1::before {
+    border: 1px solid #ffffff;
+  }
+}
 .banner-part .banner-text h1::before {
   left: -30px;
   top: 0px;
   border-right: none;
   border-bottom: none;
+}
+@media screen and (max-width: 599px) {
+  .banner-part .banner-text h1::before {
+    left: 0px;
+  }
 }
 .banner-part .banner-text h1::after {
   right: -30px;
@@ -400,8 +415,29 @@ a:focus,
   border-left: none;
   border-top: none;
 }
+@media screen and (max-width: 599px) {
+  .banner-part .banner-text h1::after {
+    right: 0px;
+  }
+}
 .banner-part img {
   width: 100%;
+}
+.banner-part .home-banner {
+  display: block;
+}
+@media screen and (max-width: 599px) {
+  .banner-part .home-banner {
+    display: none;
+  }
+}
+.banner-part .home-banner-m {
+  display: none;
+}
+@media screen and (max-width: 599px) {
+  .banner-part .home-banner-m {
+    display: block;
+  }
 }
 .banner-part .btn-learnmore {
   padding: 10px 40px;
@@ -422,9 +458,20 @@ a:focus,
   box-shadow: -5px 5px #ffffff;
   color: #ffffff;
 }
+@media screen and (max-width: 599px) {
+  .banner-part .btn-learnmore {
+    font-size: 12px;
+    padding: 5px 20px;
+  }
+}
 .banner-part #t {
   font-size: 22px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 599px) {
+  .banner-part #t {
+    font-size: 12px;
+  }
 }
 
 @-webkit-keyframes slide {
@@ -901,6 +948,9 @@ a:focus,
   text-align: center;
   opacity: 0.6;
 }
+.footer-part .footer-top .footer-contact a {
+  color: #ffffff;
+}
 @media screen and (max-width: 599px) {
   .footer-part .footer-top .footer-contact {
     font-size: 14px;
@@ -1040,8 +1090,24 @@ a:focus,
   border: none;
   font-size: 60px;
 }
+.inner-body.contact-us h1 a {
+  color: #00a79d;
+}
+.inner-body.contact-us h1 a:hover {
+  color: #262262;
+}
+@media screen and (max-width: 599px) {
+  .inner-body.contact-us h1 {
+    font-size: 36px;
+  }
+}
 .inner-body.contact-us .inner-about-img {
   width: 100%;
+}
+@media screen and (max-width: 599px) {
+  .inner-body.contact-us .inner-about-img {
+    margin-top: 30px;
+  }
 }
 .inner-body.contact-us .btn-email {
   border: 1px solid #00a79d;
