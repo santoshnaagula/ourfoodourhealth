@@ -188,7 +188,7 @@ a,
         li {
           a {
             color: $dark;
-            padding: 25px 50px;
+            padding: 25px 30px;
             display: inline-flex;
             position: relative;
             z-index: 0;
@@ -997,5 +997,47 @@ a,
     @include xs() {
       margin-bottom: 15px;
     }
+  }
+}
+
+.water-glasses-bg {
+  padding: 150px 0px;
+  background: url(../img/waterglass-bg.jpg) no-repeat center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  @include xs() {
+    padding: 40px 0px;
+  }
+  h1,
+  p {
+    color: white;
+    border: none;
+    text-align: center;
+  }
+}
+
+.ofoh-videoplayer {
+  ul {
+    padding: 0px;
+    list-style: none;
+    li {
+      .video-button {
+        padding: 15px;
+        border: none;
+        background-color: #f2f2f2;
+        width: 100%;
+        margin-bottom: 2px;
+        text-align: left;
+        &.active {
+          background-color: $primary;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  video {
+    width: 100%;
+    height: 500px;
   }
 }

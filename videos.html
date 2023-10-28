@@ -42,12 +42,14 @@
           </button>
           <ul class="custom-navbar" id="menuToggle">
             <li><a href="/">Home</a></li>
+            <li><a href="/health-benefits.html">Health Benefits</a></li>
             <li><a href="/products.html">Products</a></li>
             <li class="active"><a href="/videos.html">Videos</a></li>
             <li><a href="/testimonials.html">Testimonials</a></li>
             <li><a href="/about.html">About</a></li>
             <li><a href="/contact.html">Contact</a></li>
             <li class="buy-now"><a href="/contact.html">Buy Now</a></li>
+            <li><a href="/news.html">News</a></li>
           </ul>
           <div class="ofoh">Discovering the Power of Food for Better Health</div>
         </div>
@@ -61,13 +63,27 @@
 
   <div class="inner-body">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>Videos</h1>
-          <p> Under development</p>
-        </div>
-        <div class="col justify-content-center d-flex align-items-center">
 
+      <h1>Videos</h1>
+      <div id="video-player">
+        <div class="container">
+          <div class="row ofoh-videoplayer">
+            <div class="col-sm-3">
+              <ul id="playlist">
+                <li movieurl="img/videos/1.mp4" id="myvideo">
+                  <button class="video-button left-menu active" id="video-btn-1" time="0">Video 1</button>
+                </li>
+
+                <li movieurl="img/videos/2.mp4" id="myvideo2">
+                  <button class="video-button left-menu" id="relationship-jump" time="0">Video 2</button>
+                </li>
+
+              </ul>
+            </div>
+            <div class="col-sm-9">
+              <video id="videoarea" poster="" src="" proload="auto" controls></video>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -113,6 +129,35 @@
   <script src="js/slick.min.js"></script>
   <script src="js/t-js_t.min.js"></script>
   <script src="js/custom.js"></script>
+
+  <script>
+    var myvideo = document.getElementById("videoarea")
+    $(".video-button").on("click", function () {
+      $(".video-button").removeClass("active");
+      $(this).addClass("active");
+      // if we need to load a new video do so
+      if ($("#videoarea").attr("src") != $(this).parent().attr("movieurl")) {
+        $("#videoarea").attr({
+          "src": $(this).parent().attr("movieurl"),
+          "poster": "",
+          // load a fake attribute with the desired start time
+          "starttime": $(this).attr("time")
+        })
+        $("#videoarea").on("canplay", function () {
+          // set the current time to the fake attribute
+          myvideo.currentTime = $(this).attr("starttime")
+          myvideo.play();
+          // remove the event to stop it triggering multiple times
+          $("#videoarea").off("canplay")
+        })
+      } else {
+        // if the video URL didn't change, just adjust the time
+        myvideo.currentTime = $(this).attr("time")
+      }
+    });
+    $("#video-btn-1").click();
+
+  </script>
 </body>
 
 </html>
